@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'django',
         'PASSWORD': 'password',
-        'HOST': '127.0.0.1:5432',
+        'HOST': '127.0.0.1',
         'PORT': 5432,
     }
 }
