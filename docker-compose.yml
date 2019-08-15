@@ -1,20 +1,6 @@
 version: '3'
 
 services:
-    db:
-        image: postgres
-    migration:
-        build: .
-        command: 
-        volumes:
-            - .:/usr/src/app
-        depends_on:
-            - db
-        ports:
-            - "5432:5432"
-        environment:
-            POSTGRES_USER: django
-            POSTGRES_PASSWORD: password
     web:
         build: .
         command: 
@@ -22,6 +8,3 @@ services:
             - .:/usr/src/app
         ports:
             - "8000:5000"
-        depends_on:
-            - db
-            - migration
