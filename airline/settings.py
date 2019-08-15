@@ -77,9 +77,10 @@ WSGI_APPLICATION = 'airline.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
+        'NAME': os.environment['POSTGRESQL_DATABASE'],
+        'USER': os.environ['POSTGRESQL_USER'],
+        'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
