@@ -77,13 +77,16 @@ WSGI_APPLICATION = 'airline.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environment['POSTGRESQL_DATABASE'],
-        'USER': os.environ['POSTGRESQL_USER'],
-        'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
+        'NAME': os.environment['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'HOST': 'localhost',
         'PORT': 5432,
     }
 }
+        #'NAME': os.environment['POSTGRESQL_DATABASE'],
+        #'USER': os.environ['POSTGRESQL_USER'],
+        #'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
 
 
 # Password validation
