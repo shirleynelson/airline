@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Airport, Flight, Passenger
+from .models import Airport, Flight, Passenger, PageView
 
 # Register your models here.
 
@@ -17,3 +17,9 @@ class PassengerAdmin(admin.ModelAdmin):
 admin.site.register(Airport)
 admin.site.register(Flight, FlightAdmin)
 admin.site.register(Passenger, PassengerAdmin)
+
+
+class PageViewAdmin(admin.ModelAdmin):
+    list_display = ['hostname', 'timestamp']
+
+admin.site.register(PageView, PageViewAdmin)

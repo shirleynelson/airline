@@ -1,7 +1,9 @@
+import os
 from django.db.models import Max
 from django.test import Client, TestCase
 
-from .models import Airport, Flight, Passenger
+from .models import Airport, Flight, Passenger, PageView
+from .database import info
 
 # Create your tests here.
 class FlightsTestCase(TestCase):
@@ -81,3 +83,26 @@ class FlightsTestCase(TestCase):
         response = c.get(f"/{f.id}")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["non_passengers"].count(), 1)
+
+
+# These basic tests are to be used as an example for running tests in S2I
+# and OpenShift when building an application image.
+class PageViewModelTest(TestCase):
+    def test_viewpage_model(self):
+        pageview = PageView.objects.create(hostname='localhost')
+        pagetest = PageView.objects.get(hostname='localhost')
+        self.assertEqual(pagetest.hostname, 'localhost')
+
+class PageViewTest(TestCase):
+    def test_index(self):
+        resp = self.client.get('/')
+        self.assertEqual(resp.status_code, 200)
+
+class DbEngine(TestCase):
+    def setUp(self):
+        os.environ['ENGINE'] = 'SQLite'
+
+    def test_engine_setup(self):
+        settings = info()
+        self.assertEqual(settings['engine'], 'SQLite')
+        self.assertEqual(settings['is_sqlite'], True)
