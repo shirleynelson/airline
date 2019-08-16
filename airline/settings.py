@@ -75,15 +75,18 @@ WSGI_APPLICATION = 'airline.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'default',
-        'USER': 'django',
-        'PASSWORD': 'password',
-        'HOST': '172.30.0.30',
-        'PORT': '5432 '
-    }
+    'default': database.config()
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'default',
+#        'USER': 'django',
+#        'PASSWORD': 'password',
+#        'HOST': '172.30.0.30',
+#        'PORT': '5432 '
+#    }
+#}
         #'HOST': '172.30.1.1',
         #'HOST': '172.30.0.30',
         #'NAME': os.environment['POSTGRESQL_DATABASE'],
@@ -132,6 +135,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATICFILES_DIR=[
+    os.path.join(BASE_DIR,"static"),
+    '/var/www/static/',
+]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+INTERNAL_IPS = ['127.0.0.1']
 #MEDIA_ROOT = '/data/'
 #MEDIA_URL = '/media/'
