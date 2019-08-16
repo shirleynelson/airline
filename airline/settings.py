@@ -78,9 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'default',
-        'USER': 'default',
-        'PASSWORD': 'default',
-        'HOST': 'localhost',
+        'USER': 'django',
+        'PASSWORD': 'password',
+        'HOST': '172.30.0.30',
         'PORT': '5432 '
     }
 }
@@ -130,3 +130,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
+MEDIA_ROOT = '/data/'
+MEDIA_URL = '/media/'
