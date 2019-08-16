@@ -84,6 +84,8 @@ DATABASES = {
         'PORT': '5432 '
     }
 }
+        'HOST': '172.30.1.1',
+        'HOST': '172.30.0.30',
         #'NAME': os.environment['POSTGRESQL_DATABASE'],
         #'USER': os.environ['POSTGRESQL_USER'],
         #'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
@@ -130,6 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
-MEDIA_ROOT = '/data/'
-MEDIA_URL = '/media/'
+#STATIC_ROOT = '/static/'
+#MEDIA_ROOT = '/data/'
+#MEDIA_URL = '/media/'
