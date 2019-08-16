@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'airline.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-import urlparse
-db_url = urlparse.urlparse(os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL'))
+#import urlparse
+#db_url = urlparse.urlparse(os.environ.get('OPENSHIFT_POSTGRESQL_DB_URL'))
 
 #DATABASES = {'default': {
 #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
