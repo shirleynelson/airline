@@ -84,8 +84,8 @@ DATABASES = {
         'PORT': '5432 '
     }
 }
-        'HOST': '172.30.1.1',
-        'HOST': '172.30.0.30',
+        #'HOST': '172.30.1.1',
+        #'HOST': '172.30.0.30',
         #'NAME': os.environment['POSTGRESQL_DATABASE'],
         #'USER': os.environ['POSTGRESQL_USER'],
         #'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
