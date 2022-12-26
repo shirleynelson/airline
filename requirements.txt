@@ -46,4 +46,4 @@ virtualenv             ==            16.7.2
 virtualenv-clone        ==           0.5.3      
 websocket-client         ==          0.56.0     
 Werkzeug                  ==         0.15.5     
-wheel                      ==        0.33.4     
+wheel                      == 0.38.1     
